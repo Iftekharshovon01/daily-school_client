@@ -49,7 +49,7 @@ const Header = () => {
                         <Nav.Link className='text-black'>{user?.displayName}</Nav.Link>
                         <Nav.Link eventKey={2} href="#memes">
                         {user?.photoURL?
-                        <Image style={{heught:'40px'}} roundedCircle src={user.photoURL}></Image>
+                        <Image style={{width:'40px'}} roundedCircle src={user.photoURL}></Image>
                     : <FaUserAlt/>}
                         </Nav.Link>
                     </Nav>
