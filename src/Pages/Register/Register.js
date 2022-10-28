@@ -5,7 +5,7 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 const Register = () => {
 
     const [error,setError] = useState(null);
-    const {createUser, signInGoogle,signInGit} = useContext(AuthContext);
+    const {createUser, signInGoogle,signInGit,handelProfile} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/'
@@ -13,7 +13,7 @@ const Register = () => {
 const handleSubmit =(event)=>{
     event.preventDefault();
     const form =event.target;
-    const name = form.name.value;
+    const name = form.names.value;
     const photoURL = form.photoURL.value;
     const email = form.email.value;
     const password = form.new.value;
@@ -28,15 +28,23 @@ const handleSubmit =(event)=>{
         setError('Password does not match!')
         return;
     } 
-     createUser(name,photoURL,email,password)
+
+     createUser(email,password)
      .then(result=>{
         const user = result.user;
+        udProfile(name,photoURL);
         console.log(user);
         form.reset();
         navigate(from,{replace:true});
      })
      .catch(error => console.error(error));
 
+}
+const udProfile =(name,photoURL)=>{
+    const profile ={displayName:name,photoURL:photoURL}
+    handelProfile(profile)
+    .then(()=>{})
+    .catch(err=>console.error(err));
 }
 
 const handleGoogleSignIn = () =>{
@@ -61,7 +69,7 @@ const handleGitignIn = () =>{
         <h2 className='form-title'>Sign Up</h2>
         <form onSubmit={handleSubmit} action="">
             <div className="form-control">
-                <label htmlFor="name">Full Name:</label><input placeholder='full Name' type="text" name='name' required/>
+                <label htmlFor="names">Full Name:</label><input placeholder='full Name' type="text" name='names' required/>
             </div>
             <div className="form-control">
                 <label htmlFor="photoURL">Image Link:</label><input placeholder='image link' type="text" name='photoURL' />
