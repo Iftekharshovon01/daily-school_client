@@ -7,15 +7,15 @@ const Course = () => {
     const course = useLoaderData()
     const {name, details, image} = course;
     return (
-        <div>
-             <Card>
-                <Card.Img variant="top" src={image} />
-                <Card.Body>
+        <div className='d-flex justify-content-center'>
+             <Card style={{width: "400px", height:"300px"}}>
+                <Card.Img style={{height:"300px"}} variant="top" src={image} />
+                <Card.Body className='text-center' >
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>
                     {details}
                     </Card.Text>
-                    <Link to={`/premium`}><Button variant="primary">Get Premium</Button></Link>
+                    <Link className='d-flex justify-content-center' to={`/premium`}><Button variant="primary">Get Premium</Button></Link>
                 </Card.Body>
             </Card>
         </div>
