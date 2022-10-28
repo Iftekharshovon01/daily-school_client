@@ -12,7 +12,7 @@ const Courses = () => {
             <Col lg='2'>
                 <LeftSideNav></LeftSideNav>
             </Col>
-            <Col lg='10'>
+            <Col lg='10' className='d-flex flex-wrap'>
             {
               courses.map(course => <NewsSummeryCard key={course.id} course={course}></NewsSummeryCard>)
             }

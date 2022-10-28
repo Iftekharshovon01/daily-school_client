@@ -13,6 +13,8 @@ const Register = () => {
 const handleSubmit =(event)=>{
     event.preventDefault();
     const form =event.target;
+    const name = form.name.value;
+    const photoURL = form.photoURL.value;
     const email = form.email.value;
     const password = form.new.value;
     const confirm = form.confirm.value;
@@ -26,7 +28,7 @@ const handleSubmit =(event)=>{
         setError('Password does not match!')
         return;
     } 
-     createUser(email,password)
+     createUser(name,photoURL,email,password)
      .then(result=>{
         const user = result.user;
         console.log(user);
@@ -58,6 +60,12 @@ const handleGitignIn = () =>{
         <div className='form-conatiner'>
         <h2 className='form-title'>Sign Up</h2>
         <form onSubmit={handleSubmit} action="">
+            <div className="form-control">
+                <label htmlFor="name">Full Name</label><input placeholder='full Name' type="text" name='name' required/>
+            </div>
+            <div className="form-control">
+                <label htmlFor="photoURL">E</label><input placeholder='image link' type="text" name='photoURL' />
+            </div>
             <div className="form-control">
                 <label htmlFor="email">Email</label><input placeholder='email' type="email" name='email' required/>
             </div>
