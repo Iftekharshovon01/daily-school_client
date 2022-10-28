@@ -53,7 +53,14 @@ const Login = () => {
         <div className='form-conatiner'>
         <h2 className='form-title'>Login</h2>
         <form onSubmit={handleSubmit} action="">
-            
+            <div className="form-control">
+                <label htmlFor="email">Email</label><input placeholder='email' type="email" name='email' required/>
+            </div>
+            <div className="form-control">
+                <label htmlFor="password">Password</label><input placeholder='password' type="password" name='password' required/>
+            </div>
+            <p className='text-error'>{error}</p>
+            <input type="submit" value="Login" className='btn-submit' />
             
         </form>
         <p>New here?<Link to='/register'>Create New Account!</Link></p>
