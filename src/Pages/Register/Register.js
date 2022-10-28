@@ -61,21 +61,21 @@ const handleGitignIn = () =>{
         <h2 className='form-title'>Sign Up</h2>
         <form onSubmit={handleSubmit} action="">
             <div className="form-control">
-                <label htmlFor="name">Full Name</label><input placeholder='full Name' type="text" name='name' required/>
+                <label htmlFor="name">Full Name:</label><input placeholder='full Name' type="text" name='name' required/>
             </div>
             <div className="form-control">
-                <label htmlFor="photoURL">E</label><input placeholder='image link' type="text" name='photoURL' />
+                <label htmlFor="photoURL">Image Link:</label><input placeholder='image link' type="text" name='photoURL' />
             </div>
             <div className="form-control">
-                <label htmlFor="email">Email</label><input placeholder='email' type="email" name='email' required/>
+                <label htmlFor="email">Email:</label><input placeholder='email' type="email" name='email' required/>
             </div>
             <div className="form-control">
-                <label htmlFor="New">New Password</label><input placeholder='password' type="password" name='new' required/>
+                <label htmlFor="New">New Password:</label><input placeholder='password' type="password" name='new' required/>
                 
 
             </div>
             <div className="form-control">
-                <label htmlFor="confirm">Confirm Password</label><input placeholder='confirm password' type="password" name='confirm' required/>
+                <label htmlFor="confirm">Confirm Password:</label><input placeholder='confirm password' type="password" name='confirm' required/>
             </div>
             <p className='text-error'>{error}</p>
 
