@@ -9,14 +9,22 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import LeftSideNav from '../LeftSideNav/LeftSideNav';
 
 const Header = () => {
-    const [btn,setBtn] =useState(true);
-    const cngBtn=(e)=>{
-        setBtn(!btn);
+
+
+    const {user,logOut} = useContext(AuthContext);
+    console.log(user);
+    const [mode,setMode] =useState(true);
+    const chngMode=(e)=>{
+        setMode(!mode);
 
     }
 
-    const {user} = useContext(AuthContext);
-    console.log(user);
+    // const [btn,setbtn] =useState(true);
+    // const cngbtn=(e)=>{
+    //     setbtn(!btn);
+
+    // }
+
 
     return (
 
@@ -29,9 +37,9 @@ const Header = () => {
                         <Nav.Link ><Link to='/courses'>Courses</Link></Nav.Link>
                         <Nav.Link ><Link to='/blog'>Blog</Link></Nav.Link>
                         <Nav.Link ><Link >
-                            {btn?
-                            <Button variant="primary" onClick={cngBtn}>Dark Mode</Button>:
-                            <Button variant="success" onClick={cngBtn}>Light Mode</Button>
+                            {mode?
+                            <Button variant="primary" onClick={chngMode}>Dark Mode</Button>:
+                            <Button variant="success" onClick={chngMode}>Light Mode</Button>
                             }
                         </Link></Nav.Link>
 
@@ -48,6 +56,18 @@ const Header = () => {
                     <div className='d-lg-none'>
                         <LeftSideNav></LeftSideNav>
                     </div>
+                    <Nav>
+                    <Nav.Link ><Link >
+                            {user?
+                            <Button variant="success"  onClick={logOut}>Logout</Button>
+                            :
+                            <>
+                            <Button variant="secondary" ><Link to='/login'>Login</Link></Button>
+                            <Button variant="secondary" ><Link to='/register'>Register</Link></Button>
+                            </>
+                            }
+                        </Link></Nav.Link>
+                    </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

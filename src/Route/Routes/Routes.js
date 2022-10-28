@@ -5,6 +5,12 @@ import Category from '../../Pages/Category/Category/Category'
 import Courses from "../../Pages/Courses/Courses";
 import Course from "../../Pages/Course/Course";
 import Blog from "../../Pages/Blog/Blog";
+import Login from "../../Pages/Login/Login";
+import Register from "../../Pages/Register/Register";
+import GetPremium from "../../Pages/GetPremium/GetPremium";
+import PrivateRoute from "./PrivateRoute";
+
+
 
  export const router = createBrowserRouter([
     
@@ -33,11 +39,22 @@ import Blog from "../../Pages/Blog/Blog";
                 element: <Course></Course>,
                 loader: ({params})=> fetch(`https://course-server-nine.vercel.app/course/${params.id}`)
             },
-            
             {
                 path:'/blog',
                 element: <Blog></Blog>
             },
+            {
+                path:'/login',
+                element: <Login></Login>
+            },
+            {
+                path:'/register',
+                element: <Register></Register>
+            },
+            {
+                path:'/premium',
+                element: <PrivateRoute><GetPremium></GetPremium></PrivateRoute>
+            }
 
         ]
     }
