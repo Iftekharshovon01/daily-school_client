@@ -53,7 +53,7 @@ import PrivateRoute from "./PrivateRoute";
             },
             {
                 path:'/premium',
-                element: <PrivateRoute></PrivateRoute>
+                element: <PrivateRoute><GetPremium></GetPremium></PrivateRoute>
             }
 
         ]
