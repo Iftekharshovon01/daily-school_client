@@ -26,18 +26,18 @@ import PrivateRoute from "./PrivateRoute";
             {
                 path:'/courses',
                 element:<Courses></Courses>,
-                loader: ()=> fetch('https://course-server-nine.vercel.app/course')
+                loader: ()=> fetch('https://course-server-iftekharshovon01.vercel.app/course')
             },
       
             {
                 path:'/courses/:id',
                 element:<Category></Category>,
-                loader:({params}) => fetch(`https://course-server-nine.vercel.app/course/${params.id}`)
+                loader:({params}) => fetch(`https://course-server-iftekharshovon01.vercel.app/course/${params.id}`)
             },
             {
                 path:'/course/:id',
                 element: <Course></Course>,
-                loader: ({params})=> fetch(`https://course-server-nine.vercel.app/course/${params.id}`)
+                loader: ({params})=> fetch(`https://course-server-iftekharshovon01.vercel.app/course/${params.id}`)
             },
             {
                 path:'/blog',
