@@ -28,14 +28,14 @@ const Header = () => {
 
     return (
 
-            <Navbar collapseOnSelect className='mb-5' expand="lg" bg="dark" variant="dark">
-                <Container>
-                    <Navbar.Brand href="#home"><Link to='/'>Daily School</Link></Navbar.Brand>
+            <Navbar collapseOnSelect className='mb-5 ' expand="lg" bg="dark" variant="dark">
+                <Container className='d-flex align-items-start'>
+                    <Navbar.Brand href="#home"><Link className='text-decoration-none' to='/'>Daily School</Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link ><Link to='/courses'>Courses</Link></Nav.Link>
-                        <Nav.Link ><Link to='/blog'>Blog</Link></Nav.Link>
+                        <Nav.Link  ><Link className='text-decoration-none' to='/courses'>Courses</Link></Nav.Link>
+                        <Nav.Link  ><Link className='text-decoration-none' to='/blog'>Blog</Link></Nav.Link>
                         <Nav.Link ><Link >
                             {mode?
                             <Button variant="primary" onClick={chngMode}>Dark Mode</Button>:
@@ -57,13 +57,13 @@ const Header = () => {
                         <LeftSideNav></LeftSideNav>
                     </div>
                     <Nav>
-                    <Nav.Link ><Link >
+                    <Nav.Link className='text-decoration-none' ><Link >
                             {user?
                             <Button variant="success"  onClick={logOut}>Logout</Button>
                             :
                             <>
-                            <Button variant="secondary" ><Link to='/login'>Login</Link></Button>
-                            <Button variant="secondary" ><Link to='/register'>Register</Link></Button>
+                            <Button variant="secondary"  ><Link className='text-decoration-none me-2' to='/login'>Login</Link></Button>
+                            <Button variant="secondary"  ><Link className='text-decoration-none ms-1' to='/register'>Register</Link></Button>
                             </>
                             }
                         </Link></Nav.Link>
